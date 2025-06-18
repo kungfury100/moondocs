@@ -45,8 +45,11 @@ export default function RootLayout({
           property="og:description"
           content="Moon is an open-source design system built for fast, scalable digital experiences."
         />
-        <meta property="og:image" content="/og-image.png" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:image"
+          content="https://moondocs.vercel.app/og-image.png"
+        />
+        <link rel="icon" href="https://moondocs.vercel.app/favicon.ico" />
         <meta property="og:url" content="https://moondocs.vercel.app/" />
       </head>
 
