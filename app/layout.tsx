@@ -40,7 +40,16 @@ export default function RootLayout({
           type="text/css"
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
         />
+        <meta property="og:title" content="Moon Design System" />
+        <meta
+          property="og:description"
+          content="Moon is an open-source design system built for fast, scalable digital experiences."
+        />
+        <meta property="og:image" content="/og-image.png" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:url" content="https://moondocs.vercel.app/" />
       </head>
+
       <body
         className={`${sansFont.variable} ${monoFont.variable} font-regular antialiased tracking-wide`}
         suppressHydrationWarning
