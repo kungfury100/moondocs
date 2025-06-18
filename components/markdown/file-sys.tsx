@@ -154,17 +154,22 @@ function Folder({
         </div>
       </div>
 
-      {isOpen && items?.length !== 0 && (
-        <div className="pl-2 pt-1 flex flex-col gap-1.5 border-l ml-5">
-          {items.map((f) =>
-            isFile(f) ? (
-              <File {...f} key={f.name} />
-            ) : (
-              <Folder {...f} key={f.name} sorted={sorted} />
-            ),
-          )}
-        </div>
-      )}
+      {isOpen &&
+        items &&
+        items.length > 0 && ( // <-- IMPORTANT: Change this line
+          <div className="pl-2 pt-1 flex flex-col gap-1.5 border-l ml-5">
+            {items.map(
+              (
+                f, // Now TypeScript should know 'items' is an array here
+              ) =>
+                isFile(f) ? (
+                  <File {...f} key={f.name} />
+                ) : (
+                  <Directory {...f} key={f.name} />
+                ),
+            )}
+          </div>
+        )}
     </div>
   );
 }
