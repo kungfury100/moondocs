@@ -1,10 +1,4 @@
 import { buttonVariants } from "@/components/ui/button";
-import { page_routes } from "@/lib/routes-config";
-import {
-  MoveUpRightIcon,
-  TerminalSquareIcon,
-  ChevronRightIcon,
-} from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -14,8 +8,9 @@ export default function Home() {
         Build the best digital experiences
       </h1>
       <p className="mb-8 md:text-lg text-base  max-w-[1200px] text-secondary text-center sm:text-center">
-        Moon Design System is an open-source, complete design system. It's built
-        to help product teams across the world build better digital experiences.
+        Moon Design System is an open-source, complete design system. It&apos;s
+        built to help product teams across the world build better digital
+        experiences.
       </p>
       <p className="mb-8 md:text-lg text-base  max-w-[1200px] text-secondary text-center sm:text-center">
         Quickstart your project as a:

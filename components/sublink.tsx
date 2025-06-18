@@ -20,7 +20,6 @@ export default function SubLink({
   isSheet,
   tag,
   type,
-  className,
 }: EachRoute & { level: number; isSheet: boolean }) {
   const path = usePathname();
   const [isOpen, setIsOpen] = useState(level == 0);

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
-import { Figma, HeartIcon, TriangleIcon } from "lucide-react";
+import { Figma } from "lucide-react";
 
 export function Footer() {
   return (
