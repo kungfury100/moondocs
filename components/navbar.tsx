@@ -55,6 +55,7 @@ export function Navbar() {
             <div className="flex ml-4 sm:ml-0">
               <Link
                 href="https://github.com/kungfury100/moondocs"
+                target="_blank"
                 className={buttonVariants({
                   variant: "ghost",
                   size: "icon",
