@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import * as TabsPrimitive from "@radix-ui/react-tabs";
+import { Figma } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -14,26 +15,55 @@ const TabsList = React.forwardRef<
   <TabsPrimitive.List
     ref={ref}
     className={cn(
-      "inline-flex h-10 items-center gap-2 text-muted-foreground font-mono -mb-28 w-full border-b",
-      className
+      "inline-flex h-10 items-center gap-2 text-muted-foreground font-mono -mb-28 w-full",
+      className,
     )}
     {...props}
   />
 ));
 TabsList.displayName = TabsPrimitive.List.displayName;
 
+// Icon-rendering helper
+const getIcon = (subtype?: string) => {
+  if (!subtype) return null;
+
+  switch (subtype) {
+    case "css":
+      return <i className="devicon-css3-plain text-[17px] mr-[0.25rem]" />;
+    case "react":
+      return <i className="devicon-react-original text-[17px] mr-[0.25rem]" />;
+    case "flutter":
+      return <i className="devicon-flutter-plain text-[17px] mr-[0.25rem]" />;
+    case "figma":
+      return <Figma className="w-[1rem] h-[1rem] text-current mr-[0.25rem]" />;
+    default:
+      return null;
+  }
+};
+
 const TabsTrigger = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
->(({ className, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger> & {
+    subtype?: string;
+  }
+>(({ className, children, subtype, ...props }, ref) => (
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      "inline-flex items-center justify-center whitespace-nowrap px-1.5 py-[0.58rem] text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:border-primary border-b-2 border-transparent data-[state=active]:text-foreground font-code",
-      className
+      // Base styles
+      "inline-flex items-center justify-center whitespace-nowrap w-full px-3 py-4 text-sm font-medium transition-all rounded-md border-b-0",
+      "bg-[var(--background-secondary)] text-[var(--text-primary)]",
+
+      // Active state overrides
+      "data-[state=active]:bg-[var(--background-brand)] data-[state=active]:text-[var(--text-on-brand)]",
+
+      className,
     )}
     {...props}
-  />
+  >
+    {getIcon(subtype)}
+    {children}
+  </TabsPrimitive.Trigger>
 ));
 TabsTrigger.displayName = TabsPrimitive.Trigger.displayName;
 
@@ -44,8 +74,8 @@ const TabsContent = React.forwardRef<
   <TabsPrimitive.Content
     ref={ref}
     className={cn(
-      "ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ",
-      className
+      "ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+      className,
     )}
     {...props}
   />
