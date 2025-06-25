@@ -20,6 +20,7 @@ import Image from "@/components/markdown/image";
 import Link from "@/components/markdown/link";
 import Outlet from "@/components/markdown/outlet";
 import Files from "@/components/markdown/files";
+import ColorControls from "@/components/markdown/colorcontrols";
 import {
   Table,
   TableBody,
@@ -43,6 +44,7 @@ const components = {
   a: Link,
   Outlet,
   Files,
+  ColorControls,
   table: Table,
   thead: TableHeader,
   th: TableHead,
@@ -152,14 +154,14 @@ export async function getAllChilds(pathString: string) {
         "/contents/docs/",
         prevHref,
         it.href,
-        "index.mdx"
+        "index.mdx",
       );
       const raw = await fs.readFile(totalPath, "utf-8");
       return {
         ...justGetFrontmatterFromMD<BaseMdxFrontmatter>(raw),
         href: `/docs${prevHref}${it.href}`,
       };
-    })
+    }),
   );
 }
 
@@ -219,7 +221,7 @@ export async function getAllBlogsFrontmatter() {
         ...justGetFrontmatterFromMD<BlogMdxFrontmatter>(rawMdx),
         slug: file.split(".")[0],
       };
-    })
+    }),
   );
   return uncheckedRes.filter((it) => !!it) as (BlogMdxFrontmatter & {
     slug: string;
@@ -266,7 +268,7 @@ function rehypeCodeTitlesWithLogo() {
       ) {
         const titleTextNode = node.children.find(
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          (child: any) => child.type === "text"
+          (child: any) => child.type === "text",
         );
         if (!titleTextNode) return;
 

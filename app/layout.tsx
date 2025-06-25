@@ -49,7 +49,6 @@ export default function RootLayout({
           property="og:image"
           content="https://moondocs.vercel.app/og-image.png"
         />
-        <link rel="icon" href="https://moondocs.vercel.app/favicon.ico" />
         <meta property="og:url" content="https://moondocs.vercel.app/" />
       </head>
 
