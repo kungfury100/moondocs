@@ -27,8 +27,16 @@ export const ROUTES: EachRoute[] = [
     type: "static",
     items: [
       { title: "Introduction", href: "/introduction" },
-      { title: "Figma libraries", href: "/figma-libraries" },
-      { title: "Color", href: "/color" },
+      {
+        title: "Design language",
+        href: "/design-language",
+        noLink: true,
+        items: [
+          { title: "Color", href: "/color" },
+          { title: "Typography", href: "/typography" },
+          { title: "Elevation", href: "/elevation" },
+        ],
+      },
     ],
   },
   {
