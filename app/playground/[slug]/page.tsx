@@ -13,7 +13,7 @@ export default async function PlaygroundPage({ params }: Props) {
   const filePath = path.join(
     process.cwd(),
     "contents/playground",
-    `${params.slug}.mdx`,
+    `${params.slug}.mdx`
   );
 
   let source = "";
@@ -24,5 +24,6 @@ export default async function PlaygroundPage({ params }: Props) {
   }
 
   const { content } = await compileMDX({ source });
+
   return <div className="prose mx-auto">{content}</div>;
 }
