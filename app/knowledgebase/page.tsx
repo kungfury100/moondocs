@@ -10,10 +10,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Moon Design System - Blog",
+  title: "Moon Design System - Knowledgebase",
 };
 
-export default async function BlogIndexPage() {
+export default async function KnowledgebaseIndexPage() {
   const blogs = (await getAllBlogsFrontmatter()).sort(
     (a, b) => stringToDate(b.date).getTime() - stringToDate(a.date).getTime(),
   );
@@ -22,7 +22,7 @@ export default async function BlogIndexPage() {
       <div className="mb-7 flex flex-col gap-2">
         <h1 className="sm:text-3xl text-2xl font-extrabold">Knowledgebase</h1>
         <p className="text-muted-foreground sm:text-[16.5px] text-[14.5px]">
-          All the latest blogs and news, straight from the team.
+          All the latest knowledgebase articles and news, straight from the team.
         </p>
       </div>
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-8 gap-4 mb-5">
@@ -44,7 +44,7 @@ function BlogCard({
 }: BlogMdxFrontmatter & { slug: string }) {
   return (
     <Link
-      href={`/blog/${slug}`}
+      href={`/knowledgebase/${slug}`}
       className="flex flex-col gap-2 items-start border rounded-md py-5 px-3 min-h-[400px]"
     >
       <h3 className="text-md font-semibold -mt-1 pr-7">{title}</h3>

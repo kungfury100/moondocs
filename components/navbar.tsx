@@ -11,15 +11,15 @@ import AlgoliaSearch from "./algolia-search";
 export const NAVLINKS = [
   {
     title: "Docs",
-    href: `/docs${page_routes[0].href}`,
+    href: `/docs${page_routes[2].href}`,
   },
   {
-    title: "Guides",
-    href: "#",
+    title: "Playground",
+    href: "/playground",
   },
   {
-    title: "Blog",
-    href: "/blog",
+    title: "Knowledgebase",
+    href: "/knowledgebase",
   },
 ];
 

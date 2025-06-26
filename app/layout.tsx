@@ -22,9 +22,9 @@ const monoFont = DM_Mono({
 
 export const metadata: Metadata = {
   title: "Moon Design System - Template",
-  metadataBase: new URL("https://ariadocs.vercel.app/"),
+  metadataBase: new URL("https://moon.io/"),
   description:
-    "This comprehensive documentation template, crafted with Next.js and available as open-source, delivers a sleek and responsive design, tailored to meet all your project documentation requirements.",
+    "Moon is a complete design system built to help product teams across the world build better digital experiences. Whether you're a designer or a developer, this documentation includes all the necessary resources you'll need to start building your next great idea.",
 };
 
 export default function RootLayout({

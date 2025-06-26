@@ -35,11 +35,9 @@ export async function generateStaticParams() {
   return val.map((it) => ({ slug: it }));
 }
 
-export default async function BlogPage(props: PageProps) {
+export default async function KnowledgebasePage(props: PageProps) {
   const params = await props.params;
-
   const { slug } = params;
-
   const res = await getCompiledBlogForSlug(slug);
   if (!res) notFound();
   return (
@@ -51,7 +49,7 @@ export default async function BlogPage(props: PageProps) {
         })}
         href="/knowledgebase"
       >
-        <ArrowLeftIcon className="w-4 h-4 mr-1.5" /> Back to blog
+        <ArrowLeftIcon className="w-4 h-4 mr-1.5" /> Back to knowledgebase
       </Link>
       <div className="flex flex-col gap-3 pb-7 w-full mb-2">
         <p className="text-muted-foreground text-sm">
